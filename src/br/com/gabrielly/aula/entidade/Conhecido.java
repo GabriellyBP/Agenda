@@ -1,12 +1,13 @@
-package br.com.cidandrade.aula.entidade;
+package br.com.gabrielly.aula.entidade;
 
-import br.com.cidandrade.aula.enums.Referencia;
+import br.com.gabrielly.aula.enums.Referencia;
 
 public class Conhecido {
 
     private int id;
     private String nome;
     private Referencia referencia;
+    private int ultimoId;
 
     public Conhecido(String nome, Referencia referencia) {
         this.nome = nome;
@@ -19,8 +20,24 @@ public class Conhecido {
         this.referencia = referencia;
     }
 
+    public Conhecido(String nome, String referencia) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getUltimoId() {
+        return ultimoId;
+    }
+
+    public void setUltimoId(int ultimoId) {
+        this.ultimoId = ultimoId;
     }
 
     public String getNome() {

@@ -1,8 +1,10 @@
-package br.com.cidandrade.aula.bd;
+package br.com.gabrielly.aula.bd;
 
+import br.com.gabrielly.aula.util.Base;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class OperacaoBD {
 
@@ -12,7 +14,7 @@ public class OperacaoBD {
         try {
             con.createStatement().executeUpdate(sql);
         } catch (SQLException e) {
-            System.out.println(e.getLocalizedMessage());
+            Base.mensagemDeErro("Não foi possível executar \n" + e);
             if (!continuaNoErro) {
                 System.exit(1);
             }
@@ -22,14 +24,15 @@ public class OperacaoBD {
 
     public static Connection conectar() {
         Connection con = null;
-        final String USUARIO = "cidandrade";
-        final String SENHA = "123456";
+        final String USUARIO = "root";
+        final String SENHA = "091005";
         final String URL = "jdbc:mysql://localhost/agenda";
         try {
             con = DriverManager.getConnection(URL,
                     USUARIO, SENHA);
         } catch (SQLException ex) {
-            System.out.println(ex.getLocalizedMessage());
+            Base.mensagemDeErro("Não foi possível conectar ao banco de dados. "
+                    + "Verifique e tente posteriormente");
             System.exit(1);
         }
         return con;

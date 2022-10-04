@@ -1,6 +1,6 @@
-package br.com.cidandrade.aula.entidade;
+package br.com.gabrielly.aula.entidade;
 
-import br.com.cidandrade.aula.enums.TipoContato;
+import br.com.gabrielly.aula.enums.TipoContato;
 
 public class Contato {
 

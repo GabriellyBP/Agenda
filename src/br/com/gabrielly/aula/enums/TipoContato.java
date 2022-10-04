@@ -1,6 +1,6 @@
-package br.com.cidandrade.aula.enums;
+package br.com.gabrielly.aula.enums;
 
-import static br.com.cidandrade.aula.enums.Referencia.OUTROS;
+import static br.com.gabrielly.aula.enums.Referencia.OUTROS;
 
 public enum TipoContato {
     EMAIL("email"),

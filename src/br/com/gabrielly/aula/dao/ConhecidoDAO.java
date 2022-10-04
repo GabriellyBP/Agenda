@@ -1,11 +1,14 @@
-package br.com.cidandrade.aula.dao;
+package br.com.gabrielly.aula.dao;
 
-import br.com.cidandrade.aula.bd.OperacaoBD;
-import br.com.cidandrade.aula.entidade.Conhecido;
-import br.com.cidandrade.aula.enums.Referencia;
+import br.com.gabrielly.aula.bd.OperacaoBD;
+import br.com.gabrielly.aula.entidade.Conhecido;
+import br.com.gabrielly.aula.enums.Referencia;
+import br.com.gabrielly.aula.util.Base;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +31,7 @@ public class ConhecidoDAO {
                 conhecido.getNome(),
                 conhecido.getReferencia().getReferencia());
         OperacaoBD.execute(sql, true);
+
     }
 
     public static void alterar(Conhecido conhecido) {
@@ -36,6 +40,7 @@ public class ConhecidoDAO {
                 conhecido.getReferencia().getReferencia(),
                 conhecido.getId());
         OperacaoBD.execute(sql, true);
+
     }
 
     public static void apagar(Conhecido conhecido) {
@@ -57,8 +62,7 @@ public class ConhecidoDAO {
             }
             OperacaoBD.desconectar(con);
         } catch (SQLException e) {
-            System.out.println(e.getLocalizedMessage());
-            System.exit(1);
+            Base.mensagemDeErro("Não foi possível executar \n" + SELECT_TODOS);
         }
         return lista;
     }
@@ -81,8 +85,7 @@ public class ConhecidoDAO {
             retorno = new Conhecido(id, nome, referencia);
             OperacaoBD.desconectar(con);
         } catch (SQLException e) {
-            System.out.println(e.getLocalizedMessage());
-            System.exit(1);
+            Base.mensagemDeErro("Não foi possível executar \n" + SELECT_POR_ID);
         }
         return retorno;
     }

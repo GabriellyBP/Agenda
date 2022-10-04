@@ -1,12 +1,12 @@
-package br.com.cidandrade.aula.enums;
+package br.com.gabrielly.aula.enums;
 
 public enum Referencia {
-    VIZINHANCA("Vizinhança"),
+    VIZINHANCA("Vizinhanca"),
     TRABALHO("Trabalho"),
     IGREJA("Igreja"),
     EX("Ex"),
-    FAMILIA("Família"),
     FACULDADE("Faculdade"),
+    FAMILIA("Familia"),
     OUTROS("Outros");
     private final String referencia;
 
